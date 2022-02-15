@@ -17,15 +17,15 @@ class IHM {
   }
 
 // methode pour commencer une partie
-  static Yams menu() {
+  static bool menu() {
     bool saisieValide = false;
-    Yams y = Yams.vide();
+    bool veutJouer = false;
     while (!saisieValide) {
       print("Souhaitez vous commencer une partie ? (o/n)");
       String reponse = stdin.readLineSync().toString();
       if (reponse.toLowerCase() == "o") {
         saisieValide = true;
-        y = _nbJoueur();
+        veutJouer = true;
       } else if (reponse.toLowerCase() == "n") {
         saisieValide = true;
         print("Au revoir.");
@@ -33,11 +33,11 @@ class IHM {
         print("Erreur dans la saisie.");
       }
     }
-    return y;
+    return veutJouer;
   }
 
 // methode private pour initialiser une partie de yams à X joueurs
-  static Yams _nbJoueur() {
+  static Yams nbJoueur() {
     bool saisieValide = false;
     Yams y = Yams.vide();
     int i = 0;
@@ -59,15 +59,15 @@ class IHM {
   }
 
 // methode pour restart une partie
-  static Yams restart() {
+  static bool restart() {
     bool saisieValide = false;
-    Yams y = new Yams.vide();
+    bool veutJouer = false;
     while (!saisieValide) {
       print("Souhaitez vous recommencer une partie ? (o/n)");
       String reponse = stdin.readLineSync().toString();
       if (reponse.toLowerCase() == "o") {
         saisieValide = true;
-        y = _nbJoueur();
+        veutJouer = true;
       } else if (reponse.toLowerCase() == "n") {
         saisieValide = true;
         print("Au revoir.");
@@ -75,7 +75,7 @@ class IHM {
         print("Erreur dans la saisie.");
       }
     }
-    return y;
+    return veutJouer;
   }
 
 // methode pour afficher en ligne une liste de dés de manière tx
