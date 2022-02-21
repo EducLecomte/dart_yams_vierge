@@ -30,6 +30,9 @@ class Resultat {
   // vide le tableau de recap
   void cleartab() {}
 
+  // trie les combinaisons du plus grand au plus petit
+  void trierCombinaison() {}
+
   // calcul et remplit le récap des dés a partir d'une liste de dé
   void calculRecap(List<Des> desACalculer) {
     // on vide au préalable le tableau avec cleartab
