@@ -17,7 +17,9 @@ class Des {
 
   //autres methodes
   // permet de lancer le dé
-  void jetter() {}
+  void jetter() {
+    this._resultat = Random().nextInt(6) + 1;
+  }
 
   @override
   String toString() {
